@@ -34,7 +34,7 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="min-w-0 border-b-2 border-(--muted)/10 bg-linear-to-br from-(--surface) via-(--background)/80 to-(--surface-light)/90">
+        <section className="min-w-0 border-b-2 border-(--muted)/10 bg-linear-to-br from-(--surface) via-(--background)/80 to-(--surface-light)/90 min-h-svh">
           <div className="px-8 min-w-0">
             <div className="grid gap-4 py-4">
               <h3 className="font-sans text-(length:--font-md) text-(--accent)">
@@ -87,7 +87,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-linear-to-b from-(--background) to-(--surface) min-h-svh">
+        <section className="bg-linear-to-b from-(--background) to-(--surface)">
           <div className="flex flex-col px-6 py-6 gap-4">
             <div className="flex flex-col gap-6">
               <h2 className="font-display font-bold text-(--primary) text-(length:--font-2xl)">SOBRE MIM</h2>
