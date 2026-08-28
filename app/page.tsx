@@ -34,9 +34,9 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="min-w-0 border-b-2 border-(--muted)/10 bg-linear-to-br from-(--surface) via-(--background)/80 to-(--surface-light)/90 min-h-svh">
+        <section className="min-w-0 border-b-2 border-(--muted)/10 bg-linear-to-br from-(--surface) via-(--background)/80 to-(--surface-light)/90">
           <div className="px-8 min-w-0">
-            <div className="grid gap-4 py-4">
+            <div className="grid gap-4 py-4 max-w-97.5">
               <h3 className="font-sans text-(length:--font-md) text-(--accent)">
                 Código com propósito <br />
                 Design com intenção.
@@ -52,18 +52,18 @@ export default function Home() {
                 combinam tecnologia, design e estratégia para transformar ideias
                 em experiências digitais.
               </p>
+              <div className="flex flex-col gap-5 py-4 items-center">
+                <a
+                  className="flex justify-center gap-1 rounded-2xl w-10/10 py-6 bg-(--primary) text-(length:--font-md) transition-all
+                  hover:bg-(--primary-dark)  hover:scale-105 hover:shadow-(--accent)"
+                >
+                  Vamos conversar
+                  <FaWhatsapp size={24} className="-translate-y-0.5"></FaWhatsapp>
+                
+                </a>
+              </div>
             </div>
 
-            <div className="flex flex-col gap-5 py-4 items-center">
-              <a
-                className="flex justify-center gap-1 rounded-2xl w-10/10 py-6 bg-(--primary) text-(length:--font-md) transition-all
-                hover:bg-(--primary-dark)  hover:scale-105 hover:shadow-(--accent)"
-              >
-                Vamos conversar
-                <FaWhatsapp size={24} className="-translate-y-0.5"></FaWhatsapp>
-              
-              </a>
-            </div>
 
             <div className="mt-4">
               <p className="font-sans font-medium text-(length:--font-md) text-(--accent)">Tecnologias que utilizo</p>
