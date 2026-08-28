@@ -1,0 +1,62 @@
+[
+    {
+        "img": "/mockVerdeNavalha.webp",
+        "title": "Verde Navalha",
+        "projectType": "Landing Page",
+        "description": "Site desenvolvida para apresentar o negócio, destacar seus serviços e fortalecer sua presença digital.",
+        "bullets": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "link": "https://verde-navalha.vercel.app/"
+    },
+    {
+        "img": "/mockBellaPelle.webp",
+        "title": "Bella Pelle",
+        "projectType": "Landing Page",
+        "description": "Site para clínica estética, com foco na apresentação dos serviços, valorização da marca e conversão de novos clientes.",
+        "bullets": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "link": "https://bella-pelle.vercel.app/"
+    },
+    {
+        "img": "/mockFluxa.png",
+        "title": "Fluxa",
+        "projectType": "Full Stack",
+        "description": "Sistema de gerenciamento financeiro com autenticação, dashboard, lançamentos futuros e multiplas contas",
+        "bullets": [
+            "Next.js",
+            "React",
+            "Java"
+        ],
+        "link": "https://github.com/Lucasddr/Fluxa"
+    },
+    {
+        "img": "/Mockup lp.webp",
+        "title": "Lucas Dutra — Serviços",
+        "projectType": "Landing Page",
+        "description": "Landing page desenvolvida para apresentar serviços de desenvolvimento web, destacar diferenciais e transformar visitantes em potenciais clientes.",
+        "bullets": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "link": "https://servicos.lucasdutra.dev"
+    },
+    {
+        "img": "/Mockup reUrb.webp",
+        "title": "ReUrb",
+        "projectType": "Landing Page",
+        "description": "Site para apresentar os serviços e histórico profissional do escritório, fortalecendo sua presença digital.",
+        "bullets": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "link": "https://reurbjaguaruna.com"
+    }
+]

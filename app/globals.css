@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b070f;
+  --surface: #100C1A;
+  --surface-light: #181225;
+
+  --primary: #8B5CF6;
+  --primary-light: #A78BFA;
+  --primary-dark: #6D28D9;
+  --accent: #C4B5FD;
+
+  --foreground: #F5F3FF;
+  --muted: #A8A3B8;
+  --border: #272033;
+
+  --font-xs: clamp(0.675rem, 1.375vw, 0.975rem);
+  --font-sm: clamp(0.875rem, 1.5vw, 1rem);
+  --font-md: clamp(1rem, 1.8vw, 1.25rem);
+  --font-lg: clamp(1.25rem, 2vw, 1.5rem);
+  --font-xl: clamp(1.35rem, 2.2vw, 1.75rem);
+  --font-2xl: clamp(1.5rem, 3vw, 2.5rem);
+  --font-5xl: clamp(2rem, 5.5vw, 4.75rem);
+  --font-6xl: clamp(2.5rem, 6vw, 5rem);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-manrope);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-track {
+  animation: marquee 25s linear infinite;
 }
