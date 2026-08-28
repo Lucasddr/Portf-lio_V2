@@ -18,7 +18,7 @@ export type ProjectsProps = {
 export type Certificates = {
     img : string;
     title: string;
-    description : string;
+    institution : string;
     year : string;
     link : string;
 }
