@@ -49,7 +49,7 @@ export default function Home() {
 
               <p className="font-sans text-(length:--font-md) text-(--muted)">
                 Desenvolvo sites, landing pages e sistemas sob medida que
-                combinam tecnologia, desing e estratégia para transformar ideias
+                combinam tecnologia, design e estratégia para transformar ideias
                 em experiências digitais.
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-linear-to-b from-(--background) to-(--surface)">
+        <section className="bg-linear-to-b from-(--background) to-(--surface) min-h-svh">
           <div className="flex flex-col px-6 py-6 gap-4">
             <div className="flex flex-col gap-6">
               <h2 className="font-display font-bold text-(--primary) text-(length:--font-2xl)">SOBRE MIM</h2>
