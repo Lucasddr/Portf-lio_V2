@@ -3,7 +3,7 @@ import Certificates from "./Certificates";
 
 export default function CertificatesList({data} : CertificatesListProps) {
     return (
-        <div className="py-6">
+        <div className="flex flex-col gap-4 py-6">
             {data.map((certificates) => (
                 <Certificates key={certificates.title} certificates={certificates}/>
             ))}

@@ -5,7 +5,7 @@ export default function Certificates({certificates} : CertificatesProps) {
     return (
         <div className="bg-(--surface-light) rounded-2xl px-3 py-4 border border-(--muted)/20">
             <div className="flex flex-col gap-4">
-                <div className="w-25 px-2">
+                <div className="w-26 px-2">
                     <img className="rounded-2xl" src={certificates.img}/>
                 </div>
                 <div className="px-2">

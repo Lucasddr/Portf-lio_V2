@@ -1,12 +1,13 @@
 import Image from "next/image";
-import { Menu, ArrowUpRight } from "lucide-react";
+import { Menu, ArrowUpRight, CircleCheckBig } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Techs } from "./components/Techs";
 import ProjectsList from "./components/ProjectsList";
 import CertificatesList from "./components/CertificatesList";
 
 import projects from "@/app/Data/projects.json";
-import certificates from "@/app/Data/certificates.json"
+import certificates from "@/app/Data/certificates.json";
+import CodeCard from "./components/CodeCard";
 
 export default function Home() {
   return (
@@ -22,8 +23,12 @@ export default function Home() {
               className="w-20 h-auto"
             />
             <div className="flex flex-col gap-1">
-              <h2 className="font-display font-bold text-(length:--font-md)">Lucas Dutra</h2>
-              <p className="font-sans text-(--muted) text-(length:--font-md)">Full Stack Developer</p>
+              <h2 className="font-display font-bold text-(length:--font-md)">
+                Lucas Dutra
+              </h2>
+              <p className="font-sans text-(--muted) text-(length:--font-md)">
+                Full Stack Developer
+              </p>
             </div>
           </div>
 
@@ -34,7 +39,7 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="min-w-0 border-b-2 border-(--muted)/10 bg-linear-to-br from-(--surface) via-(--background)/80 to-(--surface-light)/90">
+        <section id="hero" className="min-w-0 border-b-2 border-(--muted)/10 bg-linear-to-br from-(--surface) via-(--background)/80 to-(--surface-light)/90">
           <div className="px-8 min-w-0">
             <div className="grid gap-4 py-4 max-w-97.5">
               <h3 className="font-sans text-(length:--font-md) text-(--accent)">
@@ -58,15 +63,17 @@ export default function Home() {
                   hover:bg-(--primary-dark)  hover:scale-105 hover:shadow-(--accent)"
                 >
                   Vamos conversar
-                  <FaWhatsapp size={24} className="-translate-y-0.5"></FaWhatsapp>
-                
+                  <FaWhatsapp
+                    size={24}
+                    className="-translate-y-0.5"
+                  ></FaWhatsapp>
                 </a>
               </div>
             </div>
-
-
             <div className="mt-4">
-              <p className="font-sans font-medium text-(length:--font-md) text-(--accent)">Tecnologias que utilizo</p>
+              <p className="font-sans font-medium text-(length:--font-md) text-(--accent)">
+                Tecnologias que utilizo
+              </p>
               <div
                 className="relative w-full overflow-hidden my-4"
                 style={{
@@ -87,53 +94,68 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-linear-to-b from-(--background) to-(--surface)">
+        <section id="sobre" className="bg-linear-to-b from-(--background) to-(--surface)">
           <div className="flex flex-col px-6 py-6 gap-4">
             <div className="flex flex-col gap-6">
-              <h2 className="font-display font-bold text-(--primary) text-(length:--font-2xl)">SOBRE MIM</h2>
-              <p className="font-sans font-bold text-(length:--font-5xl)">Mais que código, entendo <span className="text-(--primary)"> pessoas e negócios.</span></p>
+              <h2 className="font-display font-bold text-(--primary) text-(length:--font-2xl)">
+                SOBRE MIM
+              </h2>
+              <p className="font-sans font-bold text-(length:--font-5xl)">
+                Mais que código, entendo{" "}
+                <span className="text-(--primary)"> pessoas e negócios.</span>
+              </p>
             </div>
 
-            <div>{/*Foto minha olhando pro lado ou coisa parecida*/}</div>
+            <div className="flex w-full h-auto overflow-hidden rounded-2xl border border-(--border) justify-around animate-border-glow md:hidden">
+              <CodeCard />
+            </div>
 
-            <div>
-              <ul className="font-sans text-(length:--font-md) text-(--muted) py-2 flex flex-col gap-2">
-                <li>Atuação em projetos completos (front e back-end)</li>
-                <li>Interfaces modernas, responsivas e acessíveis</li>
-                <li>Código limpo, organizado e escalável</li>
-                <li>Comunicação clara e foco no cliente</li>
+            <div className="py-6">
+              <ul className="font-sans text-(length:--font-md) text-(--muted) py-2 flex flex-col gap-5">
+                <li className="flex gap-2"><span className="text-(--primary)"><CircleCheckBig/></span> Atuação em projetos completos (front e back-end)</li>
+                <li className="flex gap-2"><span className="text-(--primary)"><CircleCheckBig/></span>Interfaces modernas, responsivas e acessíveis</li>
+                <li className="flex gap-2"><span className="text-(--primary)"><CircleCheckBig/></span>Código limpo, organizado e escalável</li>
+                <li className="flex gap-2"><span className="text-(--primary)"><CircleCheckBig/></span>Comunicação clara e foco no cliente</li>
               </ul>
             </div>
           </div>
         </section>
 
-        <section>
+        <section id="projetos">
           <div className="flex flex-col px-6">
-            <div className="flex justify-between items-center gap-2">
-              <h2 className="font-display font-bold text-(--primary) text-(length:--font-lg) py-2">PROJETOS EM DESTAQUE</h2>
-              <a className="border-2 rounded-lg min-w-22 max-h-12 px-2 py-2 text-(--primary) text-(length:--font-sm) flex items-center justify-center bg-(--surface-light)/80 transition-transform hover:scale-105 hover:bg-(--accent)/30 hover:text-(--accent)">Ver todos</a>
+            <div className="flex justify-between items-center gap-2 py-4">
+              <h2 className="font-display font-bold text-(--primary) text-(length:--font-lg) py-2">
+                PROJETOS EM DESTAQUE
+              </h2>
+              <a className="border-2 rounded-lg min-w-22 max-h-12 px-2 py-2 text-(--primary) text-(length:--font-sm) flex items-center justify-center bg-(--surface-light)/80 transition-transform hover:scale-105 hover:bg-(--accent)/30 hover:text-(--accent)">
+                Ver todos
+              </a>
             </div>
             <div className="py-4">
-              <ProjectsList data={projects}/>
-          </div>
+              <ProjectsList data={projects} />
             </div>
+          </div>
         </section>
 
-        <section>
+        <section id="certificados">
           <div className="flex flex-col px-6 py-6">
             <div className="flex justify-between items-center gap-2">
-              <h2 className="font-display font-bold text-(--primary) text-(length:--font-lg) py-2">CERTIFICAÇÕES</h2>
-              <a className="border-2 rounded-lg min-w-22 max-h-12 px-2 py-2 text-(--primary) text-(length:--font-sm) flex items-center justify-center bg-(--surface-light)/80 transition-transform hover:scale-105 hover:bg-(--accent)/30 hover:text-(--accent)">Ver todas</a>
+              <h2 className="font-display font-bold text-(--primary) text-(length:--font-lg) py-2">
+                CERTIFICAÇÕES
+              </h2>
+              <a className="border-2 rounded-lg min-w-22 max-h-12 px-2 py-2 text-(--primary) text-(length:--font-sm) flex items-center justify-center bg-(--surface-light)/80 transition-transform hover:scale-105 hover:bg-(--accent)/30 hover:text-(--accent)">
+                Ver todas
+              </a>
             </div>
-            <CertificatesList data={certificates}/>
+            <CertificatesList data={certificates} />
           </div>
         </section>
 
-        <section>
+        <section id="contato">
           <div className="flex flex-col px-6 py-6">
             <div className="border border-(--muted)/20 rounded-2xl bg-linear-to-bl from-(--background) via-(--surface-light) to-(--background) flex flex-col px-8 py-6">
-                <div className="w-full flex justify-around">
-                  <div className="bg-linear-to-b from-(--surface-light) via-(--primary)/20 to-(--surface-light) rounded-2xl border border-(--muted)/10">
+              <div className="w-full flex justify-around">
+                <div className="bg-linear-to-b from-(--surface-light) via-(--primary)/20 to-(--surface-light) rounded-2xl border border-(--muted)/10">
                   <Image
                     src="/ld-logo-compact-d.svg"
                     alt="LD"
@@ -141,18 +163,33 @@ export default function Home() {
                     height={60}
                     className="w-25 h-auto"
                   />
-                  </div>
                 </div>
-                <div>
-                  <h2 className="font-display font-bold text-(length:--font-lg) text-center py-3">Vamos construir<br /> algo <span className="text-(--primary)">incrível</span> juntos?</h2>
-                  <p className="text-(length:--font-sm) text-(--muted) text-center">Estou disponível para projetos freelances e oportunidades de trabalho</p>
-                </div>
-                <div className="flex w-full justify-around py-6">
+              </div>
+              <div>
+                <h2 className="font-display font-bold text-(length:--font-lg) text-center py-3">
+                  Vamos construir
+                  <br /> algo <span className="text-(--primary)">
+                    incrível
+                  </span>{" "}
+                  juntos?
+                </h2>
+                <p className="text-(length:--font-sm) text-(--muted) text-center">
+                  Estou disponível para projetos freelances e oportunidades de
+                  trabalho
+                </p>
+              </div>
+              <div className="flex w-full justify-around py-6">
                 <a
-                className="flex justify-center gap-1 rounded-2xl py-4 bg-(--primary) w-full text-(length:--font-md) transition-all
-                hover:bg-(--primary-dark)  hover:scale-105 hover:shadow-(--accent)">Vamos conversar<FaWhatsapp size={24} className="-translate-y-0.5"></FaWhatsapp></a>
-                </div>
-
+                  className="flex justify-center gap-1 rounded-2xl py-4 bg-(--primary) w-full text-(length:--font-md) transition-all
+                hover:bg-(--primary-dark)  hover:scale-105 hover:shadow-(--accent)"
+                >
+                  Vamos conversar
+                  <FaWhatsapp
+                    size={24}
+                    className="-translate-y-0.5"
+                  ></FaWhatsapp>
+                </a>
+              </div>
             </div>
           </div>
         </section>
