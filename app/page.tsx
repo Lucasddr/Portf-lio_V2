@@ -1,19 +1,73 @@
+"use client";
+
 import Image from "next/image";
-import { Menu, ArrowUpRight, CircleCheckBig } from "lucide-react";
+import { Menu, ArrowUpRight, CircleCheckBig, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Techs } from "./components/Techs";
 import ProjectsList from "./components/ProjectsList";
 import CertificatesList from "./components/CertificatesList";
+import { useState, useEffect } from "react";
 
 import projects from "@/app/Data/projects.json";
 import certificates from "@/app/Data/certificates.json";
 import CodeCard from "./components/CodeCard";
+import NavMenu from "./components/NavMenu";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+
+  /* Cancela scrool com a nav aberta*/
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  /* Efeito de scroll do header */
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY <= 0) {
+        setShowHeader(true);
+      } else if (currentScrollY > lastScrollY) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <main className="gap-2 bg-(--surface) mx-auto w-full max-w-7xl">
-        <header className="grid grid-cols-7 w-full px-2 py-4 border-b border-(--muted)/10 bg-(--background)/40 backdrop-blur-md">
+      <main className="gap-2 bg-(--surface) mx-auto w-full max-w-7xl pt-22">
+        <header
+          className={`
+            fixed top-0 left-0 right-0
+            z-30
+            grid grid-cols-7 w-full max-w-7xl mx-auto
+            px-2 py-4
+            border-b border-(--muted)/10
+            bg-(--background)/40 backdrop-blur-md
+            transition-transform duration-300
+            ${showHeader || isOpen ? "translate-y-0" : "-translate-y-full"}
+          `}
+        >
           <div className="col-span-6 flex gap-2 w-auto">
             <Image
               src="/ld-logo-compact-d.svg"
@@ -33,13 +87,35 @@ export default function Home() {
           </div>
 
           <div className="col-span-1 flex justify-center">
-            <div className="border-2 border-(--muted)/10 rounded-lg flex flex-col justify-center w-12 items-center">
-              <Menu></Menu>
-            </div>
+            <button
+              className="relative flex h-12 w-12 items-center justify-center rounded-lg border-2 border-(--muted)/10"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <Menu
+                className={`absolute transition-all duration-300 ${
+                  isOpen
+                    ? "rotate-90 scale-0 opacity-0"
+                    : "rotate-0 scale-100 opacity-100"
+                }`}
+              />
+
+              <X
+                className={`absolute transition-all duration-300 ${
+                  isOpen
+                    ? "rotate-0 scale-100 opacity-100"
+                    : "-rotate-90 scale-0 opacity-0"
+                }`}
+              />
+            </button>
           </div>
         </header>
 
-        <section id="hero" className="min-w-0 border-b-2 border-(--muted)/10 bg-linear-to-br from-(--surface) via-(--background)/80 to-(--surface-light)/90">
+        <NavMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
+
+        <section
+          id="hero"
+          className="min-w-0 border-b-2 border-(--muted)/10 bg-linear-to-br from-(--surface) via-(--background)/80 to-(--surface-light)/90"
+        >
           <div className="px-8 min-w-0">
             <div className="grid gap-4 py-4 max-w-97.5">
               <h3 className="font-sans text-(length:--font-md) text-(--accent)">
@@ -57,18 +133,15 @@ export default function Home() {
                 combinam tecnologia, design e estratégia para transformar ideias
                 em experiências digitais.
               </p>
-              <div className="flex flex-col gap-5 py-4 items-center">
-                <a
-                  className="flex justify-center gap-1 rounded-2xl w-10/10 py-6 bg-(--primary) text-(length:--font-md) transition-all
-                  hover:bg-(--primary-dark)  hover:scale-105 hover:shadow-(--accent)"
-                >
-                  Vamos conversar
-                  <FaWhatsapp
-                    size={24}
-                    className="-translate-y-0.5"
-                  ></FaWhatsapp>
-                </a>
-              </div>
+            </div>
+            <div className="flex flex-col gap-5 py-4 items-center max-w-98">
+              <a
+                className="flex justify-center gap-1 rounded-2xl w-10/10 py-6 bg-(--primary) text-(length:--font-md) transition-all
+                hover:bg-(--primary-dark)  hover:scale-105 hover:shadow-(--accent)"
+              >
+                Vamos conversar
+                <FaWhatsapp size={24} className="-translate-y-0.5"></FaWhatsapp>
+              </a>
             </div>
             <div className="mt-4">
               <p className="font-sans font-medium text-(length:--font-md) text-(--accent)">
@@ -94,7 +167,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="sobre" className="bg-linear-to-b from-(--background) to-(--surface)">
+        <section
+          id="sobre"
+          className="bg-linear-to-b from-(--background) to-(--surface)"
+        >
           <div className="flex flex-col px-6 py-6 gap-4">
             <div className="flex flex-col gap-6">
               <h2 className="font-display font-bold text-(--primary) text-(length:--font-2xl)">
@@ -112,10 +188,30 @@ export default function Home() {
 
             <div className="py-6">
               <ul className="font-sans text-(length:--font-md) text-(--muted) py-2 flex flex-col gap-5">
-                <li className="flex gap-2"><span className="text-(--primary)"><CircleCheckBig/></span> Atuação em projetos completos (front e back-end)</li>
-                <li className="flex gap-2"><span className="text-(--primary)"><CircleCheckBig/></span>Interfaces modernas, responsivas e acessíveis</li>
-                <li className="flex gap-2"><span className="text-(--primary)"><CircleCheckBig/></span>Código limpo, organizado e escalável</li>
-                <li className="flex gap-2"><span className="text-(--primary)"><CircleCheckBig/></span>Comunicação clara e foco no cliente</li>
+                <li className="flex gap-2">
+                  <span className="text-(--primary)">
+                    <CircleCheckBig />
+                  </span>{" "}
+                  Atuação em projetos completos (front e back-end)
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-(--primary)">
+                    <CircleCheckBig />
+                  </span>
+                  Interfaces modernas, responsivas e acessíveis
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-(--primary)">
+                    <CircleCheckBig />
+                  </span>
+                  Código limpo, organizado e escalável
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-(--primary)">
+                    <CircleCheckBig />
+                  </span>
+                  Comunicação clara e foco no cliente
+                </li>
               </ul>
             </div>
           </div>
@@ -127,7 +223,7 @@ export default function Home() {
               <h2 className="font-display font-bold text-(--primary) text-(length:--font-lg) py-2">
                 PROJETOS EM DESTAQUE
               </h2>
-              <a className="border-2 rounded-lg min-w-22 max-h-12 px-2 py-2 text-(--primary) text-(length:--font-sm) flex items-center justify-center bg-(--surface-light)/80 transition-transform hover:scale-105 hover:bg-(--accent)/30 hover:text-(--accent)">
+              <a className="hidden border-2 rounded-lg min-w-22 max-h-12 px-2 py-2 text-(--primary) text-(length:--font-sm) flex items-center justify-center bg-(--surface-light)/80 transition-transform hover:scale-105 hover:bg-(--accent)/30 hover:text-(--accent)">
                 Ver todos
               </a>
             </div>
@@ -143,7 +239,7 @@ export default function Home() {
               <h2 className="font-display font-bold text-(--primary) text-(length:--font-lg) py-2">
                 CERTIFICAÇÕES
               </h2>
-              <a className="border-2 rounded-lg min-w-22 max-h-12 px-2 py-2 text-(--primary) text-(length:--font-sm) flex items-center justify-center bg-(--surface-light)/80 transition-transform hover:scale-105 hover:bg-(--accent)/30 hover:text-(--accent)">
+              <a className="hidden border-2 rounded-lg min-w-22 max-h-12 px-2 py-2 text-(--primary) text-(length:--font-sm) flex items-center justify-center bg-(--surface-light)/80 transition-transform hover:scale-105 hover:bg-(--accent)/30 hover:text-(--accent)">
                 Ver todas
               </a>
             </div>

@@ -1,41 +1,41 @@
 [
     {
-        "img" : "/Logo_UNISUL_mini.png",
+        "img" : "/logo-unisul.svg",
         "title" : "Ambientes Computacionais e Conectividade",
         "institution" : "Universidade do sul de Santa Catarina - UNISUL",
         "year" : "2025",
         "link" : "/Certificado_Ambientes_Computacionais_e_Conectividade.pdf"
     },
     {
-        "img" : "/Logo_UNISUL_mini.png",
+        "img" : "/logo-unisul.svg",
         "title" : "Sistemas Computacionais e Segurança",
         "institution" : "Universidade do sul de Santa Catarina - UNISUL",
         "year" : "2025",
         "link" : "/Certificado_Sistemas_Computacionais_e_Segurança.pdf"
     },
     {
-        "img" : "/Logo_UNISUL_mini.png",
+        "img" : "/logo-unisul.svg",
         "title" : "Programação de Soluções Computacionais",
         "institution" : "Universidade do sul de Santa Catarina - UNISUL",
         "year" : "2025",
         "link" : "/Certificado_Modelagem_de_Software.pdf"
     },
     {
-        "img" : "/Logo_UNISUL_mini.png",
+        "img" : "/logo-unisul.svg",
         "title" : "Modelagem de Software",
         "institution" : "Universidade do sul de Santa Catarina - UNISUL",
         "year" : "2025",
         "link" : "/Certificado_Modelagem_de_Software"
     },
     {
-        "img" : "/Logo_UNISUL_mini.png",
+        "img" : "/logo-unisul.svg",
         "title" : "Matemática Computacional Aplicada",
         "institution" : "Universidade do sul de Santa Catarina - UNISUL",
         "year" : "2026",
         "link" : "/Certificado_Matemática_Computacional_Aplicada.pdf"
     },
     {
-        "img" : "/Logo_UNISUL_mini.png",
+        "img" : "/logo-unisul.svg",
         "title" : "Interação Humano Computador e UX",
         "institution" : "Universidade do sul de Santa Catarina - UNISUL",
         "year" : "2026",

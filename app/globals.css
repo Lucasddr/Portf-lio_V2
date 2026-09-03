@@ -29,6 +29,10 @@
   --font-display: var(--font-manrope);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -64,5 +68,22 @@ body {
 .animate-border-glow {
   border: 1px solid var(--border);
   animation: pulseGlow 3s infinite ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }
 
