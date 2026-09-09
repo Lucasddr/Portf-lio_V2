@@ -11,6 +11,7 @@ import {
   Mail,
   Phone,
   MapPin,
+  ArrowDown,
 } from "lucide-react";
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { Techs } from "./components/Techs";
@@ -24,8 +25,10 @@ import CodeCard from "./components/CodeCard";
 import NavMenu from "./components/NavMenu";
 
 export default function Home() {
+
   const [isOpen, setIsOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
+  const [IsClosed, setIsClosed] = useState(true);
 
   /* Cancela scrool com a nav aberta*/
 
@@ -145,11 +148,13 @@ export default function Home() {
                   <a
                     className="flex justify-center gap-1 rounded-2xl w-10/10 py-6 bg-(--primary) text-(length:--font-md) transition-all
                   hover:bg-(--primary-dark)  hover:scale-105 hover:shadow-(--accent)"
+                  href="https://wa.me/5548999483625?text=Olá%2C%20vim%20pelo%20seu%20portfólio"
+                  target="_blank"
                   >
                     Vamos conversar
                     <FaWhatsapp
                       size={24}
-                      className="-translate-y-0.5"
+                      className="translate-y-0.5"
                     ></FaWhatsapp>
                   </a>
                 </div>
@@ -288,7 +293,15 @@ export default function Home() {
         </section>
 
         <section id="certificados" className="lg:px-20">
-          <div className="flex flex-col px-6 py-6 md:py-12">
+          <div className= {`flex flex-col px-6 py-6 md:py-12 overflow-hidden relative ${
+            IsClosed 
+            ? "max-h-90 md:max-h-120"
+            : " "
+          }`}
+          style={IsClosed ? {
+                  maskImage: "linear-gradient(to bottom, black 90%, transparent 100%)",
+                  WebkitMaskImage: "linear-gradient(to bottom, black 90%, transparent 100%)",
+              } : undefined}>
             <div className="flex justify-between items-center gap-2">
               <h2 className="font-display font-bold text-(--primary) text-(length:--font-lg) py-2">
                 CERTIFICAÇÕES
@@ -298,10 +311,14 @@ export default function Home() {
               </a>
             </div>
             <CertificatesList data={certificates} />
+            <button className={`rounded-2xl border border-(--muted)/10 absolute right-6/12 flex gap-0.5 z bg-(--primary)/10 px-4 py-2 translate-x-6/12 backdrop-blur-2xl ${IsClosed ? "bottom-6" : "bottom-0"}`}
+            onClick={() => setIsClosed(!IsClosed)}>
+              {IsClosed ? `Ver Mais` : `Ver menos`}
+            </button>
           </div>
         </section>
 
-        <section id="contato" className="lg:px-20">
+        <section id="contato" className="lg:px-20 pt-8">
           <div className="flex flex-col px-6 py-6">
             <div className="border border-(--muted)/20 rounded-2xl bg-linear-to-bl from-(--background) via-(--surface-light) to-(--background) flex flex-col gap-6 px-8 py-6 md:flex-row md:justify-around">
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:pb-6">
@@ -333,7 +350,9 @@ export default function Home() {
                 <div className="flex w-full">
                   <a
                     className="flex justify-center gap-1 rounded-2xl py-4 bg-(--primary) w-full text-(length:--font-md) transition-all
-                hover:bg-(--primary-dark)  hover:scale-105 hover:shadow-(--accent)"
+                    hover:bg-(--primary-dark)  hover:scale-105 hover:shadow-(--accent)"
+                    href="https://wa.me/5548999483625?text=Olá%2C%20vim%20pelo%20seu%20portfólio"
+                    target="_blank"
                   >
                     Vamos conversar
                     <FaWhatsapp
@@ -347,49 +366,49 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="bg-(--background) h-60 lg:px-20 border-t border-(--border)">
+      <footer className="bg-(--background) h-60 lg:px-20 border-t border-(--border) px-8">
         <div className="py-6 flex flex-col md:grid md:grid-cols-3 text-(--muted)">
-          <div className="flex flex-col justify-around items-center text-center gap-0.5">
-            <div className="flex items-center px-4 py-4">
+          <div className="flex flex-col items-center text-center gap-2 mt-3">
+            <div className="flex items-center">
               <Image
                 src="/ld-logo-compact-d.svg"
                 alt="LD"
                 height={80}
                 width={80}
               ></Image>
-              <h3 className="font-display text-(length:--font-2xl) min-[1020px]:text-(length:--font-lg)">
+              <h3 className="font-display text-(length:--font-2xl) min-[1020px]:text-(length:--font-lg) text-(--accent)">
                 Lucas Dutra
               </h3>
             </div>
-            <p className="font-display mt-2">Desenvolvedor Full Stack</p>
-            <p className="font-display">Transformando ideias em soluções</p>
-            <div className="flex gap-4 py-2 mt-4">
-              <div className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center">
+            <div>
+              <p className="font-display mt-2">Desenvolvedor Full Stack</p>
+              <p className="font-display">Transformando ideias em soluções</p>
+            </div>
+            <div className="flex gap-4 py-2">
+              <a className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center cursor-pointer transition-colors duration-200 hover:text-(--primary)" href="https://github.com/Lucasddr/" target="_blank">
                 <FaGithub className="h-8 w-8"/>
-              </div>
-              <div className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center">
+              </a>
+              <a className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center cursor-pointer transition-colors duration-200 hover:text-(--primary)" href="https://www.linkedin.com/in/lucasdutradev" target="_blank">
                 <FaLinkedin className="h-8 w-8"/>
-              </div>
-              <div className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center">
+              </a>
+              <a className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center cursor-pointer transition-colors duration-200 hover:text-(--primary)" href="https://www.instagram.com/l.u_ddr" target="_blank">
                 <FaInstagram className="h-8 w-8"/>
-              </div>
+              </a>
           </div>
           </div>
           <div className="flex flex-col items-center py-6 gap-2 md:justify-around">
-            <h3 className="text-(--primary) text-(length:--font-2xl)">Navegação</h3>
-            <a className="text-(--muted) text-(length:--font-md)" href="#hero">Início</a>
-            <a className="text-(--muted) text-(length:--font-md)" href="#hero">Sobre</a>
-            <a className="text-(--muted) text-(length:--font-md)" href="#hero">Projetos</a>
-            <a className="text-(--muted) text-(length:--font-md)" href="#hero">Certificações</a>
-            <a className="text-(--muted) text-(length:--font-md)" href="#hero">Contato</a>
+            <h3 className="text-(--primary) text-(length:--font-2xl) min-[1020px]:text-(length:--font-lg)">Navegação</h3>
+            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#hero">Início</a>
+            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#hero">Sobre</a>
+            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#hero">Projetos</a>
+            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#hero">Certificações</a>
+            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#hero">Contato</a>
           </div>
-          <div className="flex flex-col gap-2 py-6 text-center items-center text-(length:--font-md) md:justify-between">
-            <div className="flex flex-col gap-3">
-              <h3 className="text-(--primary) text-(length:--font-2xl)">Contato</h3>
-              <p className="flex gap-3"><Mail/>lucas.word.dutra@gmail.com</p>
-              <p className="flex gap-3"><Phone/>(48) 99948-3625</p>
-              <p className="flex gap-3"><MapPin/>Santa Catarina - Brasil</p>
-            </div>
+          <div className="flex flex-col gap-4 py-6 text-center items-center text-(length:--font-md)">
+            <h3 className="text-(--primary) text-(length:--font-2xl) min-[1020px]:text-(length:--font-lg)">Contato</h3>
+            <p className="flex gap-3"><Mail/>lucas.word.dutra@gmail.com</p>
+            <p className="flex gap-3"><Phone/>(48) 99948-3625</p>
+            <p className="flex gap-3"><MapPin/>Santa Catarina - Brasil</p>
           </div>
         </div>
       </footer>

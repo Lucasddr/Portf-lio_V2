@@ -24,6 +24,18 @@
         "link": "https://bella-pelle.vercel.app/"
     },
     {
+        "img": "/Mockup reUrb.webp",
+        "title": "ReUrb",
+        "projectType": "Landing Page",
+        "description": "Site para apresentar os serviços e histórico profissional do escritório, fortalecendo sua presença digital.",
+        "bullets": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "link": "https://reurbjaguaruna.com"
+    },
+    {
         "img": "/mockFluxa.png",
         "title": "Fluxa",
         "projectType": "Full Stack",
@@ -46,17 +58,6 @@
             "JavaScript"
         ],
         "link": "https://servicos.lucasdutra.dev"
-    },
-    {
-        "img": "/Mockup reUrb.webp",
-        "title": "ReUrb",
-        "projectType": "Landing Page",
-        "description": "Site para apresentar os serviços e histórico profissional do escritório, fortalecendo sua presença digital.",
-        "bullets": [
-            "HTML",
-            "CSS",
-            "JavaScript"
-        ],
-        "link": "https://reurbjaguaruna.com"
     }
+    
 ]
