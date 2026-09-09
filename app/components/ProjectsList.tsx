@@ -88,7 +88,7 @@ export default function ProjectsList({ data }: ProjectsListProps) {
     return (
         <div
         ref={carouselRef}
-        className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none md:grid md:grid-cols-2 md:overflow-visible"
+        className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none md:grid md:grid-cols-2 md:overflow-visible lg:grid-cols-3"
         >
         {carouselData.map((project: Projects, index) => (
             <div

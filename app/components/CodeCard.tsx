@@ -4,11 +4,12 @@ import Image from "next/image";
 
 export default function CodeCard() {
     return (
-        <Image className="scale-100 origin-center opacity-80 object-fill" 
-        src="/code3.png"
-        alt="Code Image"
-        width={400}
-        height={400}
+        <Image
+            src="/code3.png"
+            alt="Code Image"
+            width={1000}
+            height={1088}
+            className="w-full h-auto opacity-80"
         />
-    )
+    );
 }
