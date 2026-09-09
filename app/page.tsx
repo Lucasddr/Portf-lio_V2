@@ -293,10 +293,10 @@ export default function Home() {
         </section>
 
         <section id="certificados" className="lg:px-20">
-          <div className= {`flex flex-col px-6 py-6 md:py-12 overflow-hidden relative ${
+          <div className= {`flex flex-col px-6 py-6 md:py-12 overflow-hidden relative transition-[max-height] duration-700 ease-in-out ${
             IsClosed 
             ? "max-h-90 md:max-h-120"
-            : " "
+            : "max-h-600"
           }`}
           style={IsClosed ? {
                   maskImage: "linear-gradient(to bottom, black 90%, transparent 100%)",
