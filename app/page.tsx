@@ -401,10 +401,10 @@ export default function Home() {
           <div className="flex flex-col items-center py-6 gap-2 md:justify-around">
             <h3 className="text-(--primary) text-(length:--font-2xl) min-[1020px]:text-(length:--font-lg)">Navegação</h3>
             <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#hero">Início</a>
-            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#hero">Sobre</a>
-            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#hero">Projetos</a>
-            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#hero">Certificações</a>
-            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#hero">Contato</a>
+            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#sobre">Sobre</a>
+            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#projetos">Projetos</a>
+            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#certificados">Certificações</a>
+            <a className="text-(--muted) text-(length:--font-md) transition-colors duration-200 hover:text-(--primary)" href="#contato">Contato</a>
           </div>
           <div className="flex flex-col gap-4 py-6 text-center items-center text-(length:--font-md)">
             <h3 className="text-(--primary) text-(length:--font-2xl) min-[1020px]:text-(length:--font-lg)">Contato</h3>
