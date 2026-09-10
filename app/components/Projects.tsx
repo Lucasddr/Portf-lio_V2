@@ -5,7 +5,7 @@ export default function ProjectsCard({ projects }: ProjectsProps) {
 return (
     <div className="border border-(--muted)/20 rounded-2xl bg-linear-to-br from-(--background) via-(--surface-light) to-(--background) flex flex-col items-end min-h-114">
         <div className="w-full px-2 py-2">
-            <img className="rounded-2xl" src={projects.img}></img>
+            <img className="rounded-2xl" src={projects.img} alt={`Mockup ${projects.title}`}></img>
         </div>
         <div className="px-6 py-4 flex flex-col flex-1">
             <div className="flex justify-between gap-4 min-h-10 items-center">

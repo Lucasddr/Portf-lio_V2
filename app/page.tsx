@@ -77,7 +77,7 @@ export default function Home() {
           <div className="col-span-6 flex gap-2 w-auto">
             <Image
               src="/ld-logo-compact-d.svg"
-              alt="LD"
+              alt="logo LD"
               width={80}
               height={60}
               className="w-20 h-auto"
@@ -95,6 +95,8 @@ export default function Home() {
           <div className="col-span-1 flex justify-center">
             <button
               className="relative flex h-12 w-12 items-center justify-center rounded-lg border-2 border-(--muted)/10"
+              aria-label={isOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
+              aria-expanded={isOpen}
               onClick={() => setIsOpen(!isOpen)}
             >
               <Menu
@@ -326,7 +328,7 @@ export default function Home() {
                   <div className="bg-linear-to-b from-(--surface-light) via-(--primary)/20 to-(--surface-light) rounded-2xl border border-(--muted)/10 max-h-20">
                     <Image
                       src="/ld-logo-compact-d.svg"
-                      alt="LD"
+                      alt="logo LD"
                       width={80}
                       height={60}
                       className="w-25 h-auto"
@@ -372,7 +374,7 @@ export default function Home() {
             <div className="flex items-center">
               <Image
                 src="/ld-logo-compact-d.svg"
-                alt="LD"
+                alt="logo LD"
                 height={80}
                 width={80}
               ></Image>
@@ -385,13 +387,13 @@ export default function Home() {
               <p className="font-display">Transformando ideias em soluções</p>
             </div>
             <div className="flex gap-4 py-2">
-              <a className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center cursor-pointer transition-colors duration-200 hover:text-(--primary)" href="https://github.com/Lucasddr/" target="_blank">
+              <a className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center cursor-pointer transition-colors duration-200 hover:text-(--primary)" href="https://github.com/Lucasddr/" target="_blank" aria-label="GitHub">
                 <FaGithub className="h-8 w-8"/>
               </a>
-              <a className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center cursor-pointer transition-colors duration-200 hover:text-(--primary)" href="https://www.linkedin.com/in/lucasdutradev" target="_blank">
+              <a className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center cursor-pointer transition-colors duration-200 hover:text-(--primary)" href="https://www.linkedin.com/in/lucasdutradev" target="_blank" aria-label="Linkedin">
                 <FaLinkedin className="h-8 w-8"/>
               </a>
-              <a className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center cursor-pointer transition-colors duration-200 hover:text-(--primary)" href="https://www.instagram.com/l.u_ddr" target="_blank">
+              <a className="border border-(--border) rounded-2xl h-12 w-12 flex flex-col justify-around items-center cursor-pointer transition-colors duration-200 hover:text-(--primary)" href="https://www.instagram.com/l.u_ddr" target="_blank" aria-label="Instagram">
                 <FaInstagram className="h-8 w-8"/>
               </a>
           </div>

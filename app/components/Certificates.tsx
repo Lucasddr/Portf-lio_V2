@@ -6,7 +6,7 @@ export default function Certificates({certificates} : CertificatesProps) {
         <div className="bg-(--surface-light) rounded-2xl px-3 py-4 border border-(--muted)/20 h-full">
             <div className="flex flex-col gap-4 h-full">
                 <div className="w-26 px-2">
-                    <img className="" src={certificates.img}/>
+                    <img className="" src={certificates.img} alt={`Logo ${certificates.institution}`}/>
                 </div>
                 <div className="px-2 flex flex-col flex-1">
                     <h3 className="font-sans font-bold text-(length:--font-lg) pb-2">{certificates.title}</h3>
